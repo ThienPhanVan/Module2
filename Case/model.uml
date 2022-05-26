@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.codegym.model</OriginalElement>
+  <nodes>
+    <node x="0.0" y="642.0">com.codegym.model.Role</node>
+    <node x="393.0" y="0.0">com.codegym.model.OrderItem</node>
+    <node x="270.0" y="343.0">com.codegym.model.Product</node>
+    <node x="0.0" y="10.974281391830573">com.codegym.model.User</node>
+    <node x="0.0" y="343.0">com.codegym.model.Order</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="0.8200992555831266" showDependencies="false" x="331.8003025718608" y="392.39031770045386" />
+  <SelectedNodes>
+    <node>com.codegym.model.User</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,10 +1,10 @@
 package com.codegym;
 
-import com.codegym.view.Menu;
+import com.codegym.view.ProductViewLauncher;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Menu();
+        ProductViewLauncher.run();
     }
 }

@@ -1,62 +1,72 @@
 package com.codegym.motel;
 
 public class Product {
-    private int id;
-    private String name;
-    private int price;
-    private int quantity;
+    private Long id;
+    private String title;
+    private Double price;
+    private Integer quantity;
     private String description;
 
     public Product() {
+
     }
 
-    public Product(int id, String name, int price, int quantity, String description) {
+    public Product(long id, String title, double price, int quantity, String description) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.price = price;
         this.quantity = quantity;
         this.description = description;
     }
 
-    public Product (String record) {
-        String[] fields = record.split(",");
-        id = Integer.parseInt(fields[0]);
-        name = fields[1];
-        price = Integer.parseInt(fields[2]);
-        quantity = Integer.parseInt(fields[3]);
-        description = fields[4];
-
+    public Product(long id, String title, Double price, Integer quantity, String description) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity;
+        this.description = description;
     }
 
-    public int getId() {
+    public static Product parse(String record) {
+        String[] fields = record.split(",");
+        long id = Long.parseLong(fields[0]);
+        String title = fields[1];
+        double price = Double.parseDouble(fields[2]);
+        int quantity = Integer.parseInt(fields[3]);
+        String description = fields[4];
+        return new Product(id, title, price, quantity, description);
+    }
+
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
@@ -70,6 +80,11 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("%s,%s,%s,%s,%s,",id + "," + name+ "," + price + "," + quantity + "," + description);
+        return String.format("%s,%s,%s,%s,%s",
+                id,
+                title,
+                price,
+                quantity,
+                description);
     }
 }
