@@ -7,13 +7,13 @@ public class OrderItem {
     private long orderId;
     private int productId;
     private String productName;
-    private double total;
+    private long total;
 
 
     public OrderItem(){
     }
 
-    public OrderItem(long id, double price, int quantity, long orderId, int productId, String productName, double total) {
+    public OrderItem(long id, double price, int quantity, long orderId, int productId, String productName, long total) {
         this.id = id;
         this.price = price;
         this.quantity = quantity;
@@ -31,7 +31,7 @@ public class OrderItem {
         orderId = Long.parseLong(fields[3]);
         productId = Integer.parseInt(fields[4]);
         productName = fields[5];
-        total = Double.parseDouble(fields[6]);
+        total = Long.parseLong(fields[6]);
     }
 
 
@@ -52,11 +52,13 @@ public class OrderItem {
     }
 
     public int getQuantity() {
+
         return quantity;
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+            this.quantity = quantity;
+
     }
 
     public long getOrderId() {
@@ -83,7 +85,7 @@ public class OrderItem {
         this.productName = productName;
     }
 
-    public double getTotal() {
+    public long getTotal() {
         return total;
     }
 
@@ -92,7 +94,7 @@ public class OrderItem {
     }
 
 
-    public void setTotal(double total) {
+    public void setTotal(long total) {
         this.total = total;
     }
 

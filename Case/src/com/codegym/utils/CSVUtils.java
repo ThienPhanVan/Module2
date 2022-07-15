@@ -9,7 +9,7 @@ public class CSVUtils {
         try {
             PrintWriter printWriter = new PrintWriter(path);
             for (Object item : items) {
-                printWriter.println(item.toString());
+                printWriter.println(item);
             }
             printWriter.flush();
             printWriter.close();

@@ -11,22 +11,23 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String title, String color,Integer quantity,Double price) {
+    public Product(Long id, String title, String color, Integer quantity, Double price) {
         this.id = id;
         this.title = title;
-        this.color =color;
+        this.color = color;
         this.quantity = quantity;
         this.price = price;
 
     }
-    public static Product parse(String record){
-        String [] fields = record.split(",");
+
+    public static Product parse(String record) {
+        String[] fields = record.split(",");
         long id = Long.parseLong(fields[0]);
         String title = fields[1];
         String color = fields[2];
         Integer quantity = Integer.parseInt(fields[3]);
         double price = Double.parseDouble(fields[4]);
-        return new Product(id,title,color,quantity,price);
+        return new Product(id, title, color, quantity, price);
     }
 
     public Long getId() {
@@ -51,6 +52,7 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+
     }
 
     public Integer getQuantity() {

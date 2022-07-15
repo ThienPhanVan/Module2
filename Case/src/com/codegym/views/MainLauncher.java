@@ -8,7 +8,7 @@ public class MainLauncher {
         AdminView adminView = new AdminView();
         adminView.adminLogin();
         menuOption();
-//        OrderViewLauncher.run();
+        OrderViewLauncher.run();
     }
 
     public static void exit() {
@@ -24,16 +24,16 @@ public class MainLauncher {
                 System.out.print("--->> ");
                 int number = scanner.nextInt();
                 switch (number) {
+//                    case 1:
+////                        UserViewLauncher.launch();
+//                        break;
                     case 1:
-                        UserViewLauncher.launch();
-                        break;
-                    case 2:
                         ProductViewLauncher.run();
                         break;
-                    case 3:
+                    case 2:
                         OrderViewLauncher.run();
                         break;
-                    case 4:
+                    case 3:
                         exit();
                     default:
                         System.out.println("Chọn chức năng không đúng, vui lòng nhập lại!");
@@ -51,10 +51,10 @@ public class MainLauncher {
     public static void mainMenu() {
         System.out.println("\t ✬ ✬ ✬ ✬ ✬ ✬ ✬MAIN MENU✬ ✬ ✬ ✬ ✬ ✬ ✬");
         System.out.println("\t ✬                                     ✬");
-        System.out.println("\t ✬     1. Quản lý người dùng           ✬");
-        System.out.println("\t ✬     2. Quản lý sản phẩm             ✬");
-        System.out.println("\t ✬     3. Quản lý đơn đặt hàng         ✬");
-        System.out.println("\t ✬     4. Thoát chương trình           ✬");
+//        System.out.println("\t ✬     1. Quản lý người dùng           ✬");
+        System.out.println("\t ✬     1. Quản lý sản phẩm             ✬");
+        System.out.println("\t ✬     2. Quản lý đơn đặt hàng         ✬");
+        System.out.println("\t ✬     3. Thoát chương trình           ✬");
         System.out.println("\t ✬                                     ✬");
         System.out.println("\t ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬ ✬");
     }

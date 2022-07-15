@@ -39,7 +39,7 @@ public class ProductViewLauncher {
                         menuOption();
                     case 7:
                         AppUtils.exit();
-                        System.exit(7);
+//                        System.exit(7);
                         break;
                     default:
                         System.err.println("Chọn chức năng không đúng! Vui lòng chọn lại");
@@ -55,16 +55,16 @@ public class ProductViewLauncher {
     }
     public static void menuMobile() {
         System.out.println();
-        System.out.println("* * * * * * * - - -MENU MOBILE- - - * * * * * * * *");
-        System.out.println("*                                                *");
-        System.out.println("*  1. Thêm sản phẩm                                  *");
-        System.out.println("*  2. Sửa thông tin sản phẩm                         *");
-        System.out.println("*  3. Xoá sản phẩm                                   *");
-        System.out.println("*  4. Hiển thị tất cả sản phẩm                       *");
-        System.out.println("*  5. Hiển thị tất cả sản phẩm theo giá tăng dần     *");
-        System.out.println("*  6. Trở lại                                      *");
-        System.out.println("*  7. Thoát                                    *");
-        System.out.println("*                                                *");
-        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * *");
+        System.out.println("|------------------ MENU MOBILE ------------------|");
+        System.out.println("|                                                 |");
+        System.out.println("|  1. Thêm sản phẩm                               |");
+        System.out.println("|  2. Sửa thông tin sản phẩm                      |");
+        System.out.println("|  3. Xoá sản phẩm                                |");
+        System.out.println("|  4. Hiển thị tất cả sản phẩm                    |");
+        System.out.println("|  5. Hiển thị tất cả sản phẩm theo giá tăng dần  |");
+        System.out.println("|  6. Trở lại                                     |");
+        System.out.println("|  7. Thoát                                       |");
+        System.out.println("|                                                 |");
+        System.out.println("|-------------------------------------------------|");
     }
 }

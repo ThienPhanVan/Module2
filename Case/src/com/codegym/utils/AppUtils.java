@@ -27,7 +27,7 @@ public class AppUtils {
     public static int retryParseInt() {
         int result;
         do {
-            System.out.print(" ⭆ ");
+//            System.out.print(" ⭆ ");
             try {
                 result = Integer.parseInt(scanner.nextLine());
                 return result;
@@ -105,5 +105,8 @@ public class AppUtils {
     public static void exit() {
         System.out.println("\tTạm biệt. Hẹn gặp lại!");
         System.exit(5);
+    }
+    public static void isRetryNumber() {
+
     }
 }

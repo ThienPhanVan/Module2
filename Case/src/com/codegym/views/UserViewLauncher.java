@@ -42,13 +42,13 @@ public class UserViewLauncher {
     }
 
     public static void menuUser() {
-        System.out.println("⚪ ⚪ ⚪ ⚪ ⚪  USERS MANAGER  ⚪ ⚪ ⚪ ⚪ ⚪");
-        System.out.println("⚪                                      ⚪");
-        System.out.println("⚪     1. Thêm người dùng               ⚪");
-        System.out.println("⚪     2. Sửa thông tin người dùng      ⚪");
-        System.out.println("⚪     3. Hiện danh sách người dùng     ⚪");
-        System.out.println("⚪     4. Quay lại                      ⚪");
-        System.out.println("⚪                                      ⚪");
-        System.out.println("⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪ ⚪");
+        System.out.println("|------------------- USERS MANAGER ------------------|");
+        System.out.println("|                                                    |");
+        System.out.println("|     1. Thêm người dùng                             |");
+        System.out.println("|     2. Sửa thông tin người dùng                    |");
+        System.out.println("|     3. Hiện danh sách người dùng                   |");
+        System.out.println("|     4. Quay lại                                    |");
+        System.out.println("|                                                    |");
+        System.out.println("|----------------------------------------------------|");
     }
 }

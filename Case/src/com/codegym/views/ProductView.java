@@ -1,11 +1,12 @@
 package com.codegym.views;
+
 import com.codegym.model.Product;
 import com.codegym.services.IProductService;
 import com.codegym.services.ProductService;
 import com.codegym.utils.AppUtils;
-import sun.security.mscapi.CPublicKey;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,7 +20,8 @@ public class ProductView {
 
     public void add() {
         do {
-            long id = inputId(InputOption.ADD);
+            long id = System.currentTimeMillis()/1000;
+//            long id = inputId(InputOption.ADD);
             String title = inputTitle(InputOption.ADD);
             String color = inputColor(InputOption.ADD);
             int quantity = inputQuantity(InputOption.ADD);
@@ -42,9 +44,9 @@ public class ProductView {
         int quantity;
         do {
             quantity = AppUtils.retryParseInt();
-            if (quantity <= 0)
-                System.out.println("Số lượng phải lớn hơn 0 (giá > 0)");
-        } while (quantity <= 0);
+            if (quantity <=0 || quantity>=500)
+                System.out.println("Số lượng phải lớn hơn 0 và bé hơn 200 (giá > 0)");
+        } while (quantity <=0|| quantity>=500);
         return quantity;
     }
 
@@ -61,7 +63,7 @@ public class ProductView {
         String result;
         System.out.println("-->> ");
         while ((result = scanner.nextLine()).isEmpty()) {
-            System.out.printf("Màu sắc sản phẩm không được để trống \n");
+            System.err.printf("Màu sắc sản phẩm không được để trống \n");
             System.out.print("-->> ");
 
         }
@@ -69,10 +71,10 @@ public class ProductView {
     }
 
     public void showProducts(InputOption inputOption) {
-        System.out.println("*****                 ---          DANH SÁCH SẢN PHẨM           ---                      *****");
-        System.out.printf("%-10s %-20s %-15s %-15s %-15s\n", "ID", "Tên sản phẩm", "Màu sắc", "Số lượng", "Giá");
+        System.out.println("|---------------------------------------------------- DANH SÁCH SẢN PHẨM ----------------------------------------------------|");
+        System.out.printf("%-15s %-25s %-15s %-15s %-15s\n", "ID", "Tên sản phẩm", "Màu sắc", "Số lượng", "Giá");
         for (Product product : productService.getProducts()) {
-            System.out.printf("%-10d %-20s %-15s %-15d %-15s\n",
+            System.out.printf("%-15d %-25s %-15s %-15d %-15s\n",
                     product.getId(),
                     product.getTitle(),
                     product.getColor(),
@@ -82,7 +84,7 @@ public class ProductView {
 
             );
         }
-        System.out.println("--------------------------------------------------------------------------------------------------\n");
+        System.out.println("|------------------------------------------------------------------------------------------------------------------------|\n");
         if (inputOption == InputOption.SHOW)
             AppUtils.isRetry(InputOption.SHOW);
     }
@@ -110,10 +112,10 @@ public class ProductView {
             }
         }
 
-        System.out.println("****************** REMOVE COMFIRM ******************");
-        System.out.println(" **  Nhấn 1 để xóa                              **");
-        System.out.println(" **  Nhấn 2 để quay lại.                        **");
-        System.out.println("******************  - - - - - -  *******************");
+        System.out.println("|-------------------- Bạn có chắc chắn muốn xóa! ---------------------|");
+        System.out.println("|  Nhấn 1 để xóa                                                      |");
+        System.out.println("|  Nhấn 2 để quay lại.                                                |");
+        System.out.println("|---------------------------------------------------------------------|");
         int option = AppUtils.retryChoose(1, 2);
         if (option == 1) {
             productService.removeById(id);
@@ -123,7 +125,7 @@ public class ProductView {
         }
     }
 
-    private String inputTitle(InputOption option) {
+    private String  inputTitle(InputOption option) {
         switch (option) {
             case ADD:
                 System.out.println("Nhập tên sản phẩm: ");
@@ -131,14 +133,12 @@ public class ProductView {
             case UPDATE:
                 System.out.println("Nhập tên bạn muốn sửa: ");
                 break;
-
         }
         String result;
-        System.out.println("-->> ");
+        System.out.print("-->> ");
         while ((result = scanner.nextLine()).isEmpty()) {
             System.out.printf("Tên sản phẩm không được để trống \n");
             System.out.print("-->> ");
-
         }
         return result;
     }
@@ -186,21 +186,22 @@ public class ProductView {
                 break;
             case UPDATE:
                 System.out.println("Nhập giá bạn muốn sửa: ");
+                break;
         }
         double price;
         do {
             price = AppUtils.retryParseDouble();
-            if (price <= 0)
-                System.out.println("giá phải lớn hơn 0");
-        } while (price <= 0);
+            if (price < 100 || price >=50000000)
+                System.out.println("giá phải lớn hơn 100 && bé hơn 50000000 triệu thì mới chịu :)))");
+        } while (price < 100 || price >=50000000);
         return price;
     }
 
     public void showProductsSort(InputOption inputOption, List<Product> products) {
         System.out.println("*************                 --- DANH SÁCH SẢN PHẨM ---                ****************");
-        System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", "ID", "Tên sản phẩm", "Màu sắc", "Số lượng", "Giá");
+        System.out.printf("%-15s %-25s %-15s %-15s %-15s\n", "ID", "Tên sản phẩm", "Màu sắc", "Số lượng", "Giá");
         for (Product product : products) {
-            System.out.printf("%-15s %-20s %-15s %-15s %-15s\n", product.getId(), product.getTitle(), product.getColor(), product.getQuantity(), AppUtils.doubleToVND(product.getPrice()));
+            System.out.printf("%-15s %-25s %-15s %-15s %-15s\n", product.getId(), product.getTitle(), product.getColor(), product.getQuantity(), AppUtils.doubleToVND(product.getPrice()));
 
         }
         System.out.println("*****************************************************************************************");
@@ -222,14 +223,14 @@ public class ProductView {
         do {
             showProducts(InputOption.UPDATE);
             long id = inputId(InputOption.UPDATE);
-            System.out.println("***************  SỬA SẢN PHẨM  ****************");
-            System.out.println("** 1. Sửa tên sản phẩn                       **");
-            System.out.println("** 2. Sửa màu sắc sản phẩ                    **");
-            System.out.println("** 3. Sửa số lượng sản phẩn                  **");
-            System.out.println("** 4. Sửa giá sản phẩn                       **");
-            System.out.println("** 5. Quay lại Menu                          **");
-            System.out.println("************************************************");
-            System.out.println("** Chọn chức năng.                           **");
+            System.out.println("|----------------- SỬA SẢN PHẨM -----------------|");
+            System.out.println("| 1. Sửa tên sản phẩm                            |");
+            System.out.println("| 2. Sửa màu sắc sản phẩm                        |");
+            System.out.println("| 3. Sửa số lượng sản phẩm                       |");
+            System.out.println("| 4. Sửa giá sản phẩm                            |");
+            System.out.println("| 5. Quay lại Menu                               |");
+            System.out.println("|------------------------------------------------|");
+            System.out.println("| Chọn chức năng:                                |");
             int option = AppUtils.retryChoose(1, 5);
             Product newProduct = new Product();
             newProduct.setId(id);
@@ -246,6 +247,7 @@ public class ProductView {
                     newProduct.setColor(color);
                     productService.update(newProduct);
                     System.out.println("Màu sắc sản phẩm đã cập nhật thành công");
+                    break;
                 case 3:
                     int quantity = inputQuantity(InputOption.UPDATE);
                     newProduct.setQuantity(quantity);

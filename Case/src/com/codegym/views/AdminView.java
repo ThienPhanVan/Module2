@@ -15,11 +15,12 @@ public class AdminView {
 
     public void adminLogin() {
         boolean isRetry;
-        System.out.println("|*  =  *  =  *  =  *  =  * * *  =  *  =  *  =  *  =  *|");
-        System.out.println("|*                                                   *|");
-        System.out.println("|*                  ĐĂNG NHẬP HỆ THỐNG               *| ");
-        System.out.println("|*                                                   *|");
-        System.out.println("|*  =  *  =  *  =  *  =  * * *  =  *  =  *  =  *  =  *|");
+        System.out.println("|-----------------------------------------------------|");
+        System.out.println("|                                                     |");
+        System.out.println("|                  ĐĂNG NHẬP HỆ THỐNG                 |");
+        System.out.println("|                                                     |");
+        System.out.println("|-----------------------------------------------------|");
+
 
         do {
             System.out.println("Username");
